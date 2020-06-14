@@ -12,9 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //$this->call(CategoriaFactory::class);
-        $this->call(ClienteFactory::class);
+        // $this->call(ClienteFactory::class);
         //$this->call(ProdutoFactory::class);
         //$this->call(VendaFactory::class);
-        $this->call(FornecedorFactory::class);
+        // $this->call(FornecedorFactory::class);
+
+        factory(\App\Cliente::class, 10)->create();
+        factory(\App\Fornecedor::class, 10)->create();
     }
 }

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
-class Cliente extends Controller
+use Illuminate\Http\Request;
+use App\Cliente;
+use App\Http\Requests\ClienteRequests;
+
+class ClienteC extends Controller
 {
     public function index(){
         return view('welcome');
@@ -28,7 +31,7 @@ class Cliente extends Controller
 
 
     public function lista(){
-        return Cliente::all(); ;
+        return cliente::all();
 
     }
 }

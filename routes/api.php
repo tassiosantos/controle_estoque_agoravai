@@ -14,35 +14,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::namespace()->name('api.')->group(function(){
+Route::middleware('api')->group(function(){
 
     Route::prefix('fornecedores')->group(function(){
 
-        Route::get('/lista', 'FornecedorController@lista');
+        Route::get('/lista', 'FornecedorC@lista');
     
-        Route::get('/create', 'FornecedorController@create');
+        Route::get('/create', 'FornecedorC@create');
 
-        Route::post('/store', 'FornecedorController@store');
+        Route::post('/store', 'FornecedorC@store');
     });
 
     Route::prefix('clientes')->group(function(){
-        Route::get('/lista', 'ClienteController@lista');
+        Route::get('/lista', 'ClienteC@lista');
     
-        Route::get('/create', 'FornecedorController@create');   
+        Route::get('/create', 'ClienteC@create');   
 
-        Route::post('/store', 'FornecedorController@store');
+        Route::post('/store', 'ClienteC@store');
     });
 
     Route::prefix('vendas')->group(function(){
-        Route::get('/registros', 'FornecedorController@lista');
+        Route::get('/registros', 'VendasC@lista');
     
-        Route::get('/create', 'FornecedorController@create');
+        Route::get('/create', 'VendasC@create');
 
-        Route::post('/store', 'FornecedorController@store');
+        Route::post('/store', 'VendasC@store');
     });
 
 

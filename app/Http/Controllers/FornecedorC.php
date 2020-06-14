@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Fornecedor;
+use App\Http\Requests\FornecedorRequests;
 
-class Fornecedor extends Controller
+class FornecedorC extends Controller
 {
     public function index()
     {
